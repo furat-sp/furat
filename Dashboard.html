@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Furat - Dashboard</title>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="slideout.CSS" rel="stylesheet" type="text/css">
+  <link href="dashboard.css" rel="stylesheet" type="text/css">
+
+
+  <!--  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" /> -->
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="webfonts/all.min.css" />
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+  <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" class="menu-icon"><i class="fa fa-bars"></i></label>
+  <div class="content-container">
+    <div class="site-title">
+      <h1>Dashboard</h1>
+    </div>
+
+    <div class="content">
+      <div class="boxcontainer">
+
+        <div id="sumbox">
+          <p>King Abdulaziz Rd.</p>
+          <iframe width="380" height="260" style="border: 1px solid #cccccc;"
+            src="https://thingspeak.com/channels/2097223/widgets/628987"></iframe>
+
+        </div>
+        <div id="sumbox">
+          <p>Prince Sultan Rd.</p>
+          <iframe width="380" height="260" style="border: 1px solid #cccccc;"
+            src="https://thingspeak.com/channels/2097223/widgets/628989"></iframe>
+
+
+        </div>
+        <div id="sumbox">
+          <p>Al-Madinah Al-Munawara Rd.</p>
+          <iframe width="380" height="260" style="border: 1px solid #cccccc;"
+            src="https://thingspeak.com/channels/2097223/widgets/628990"></iframe>
+
+        </div>
+
+      </div>
+      <div class="boxcontainer">
+        <div id="mapbox">
+
+          <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1A9rqdDDvhMWRX3O1Q5pjGjUd0gxAa3c&ehbc=2E312F"
+            width="383px" height="530px"></iframe>
+        </div>
+        <div id="sumbox">
+          <div>
+
+            <section class="addThere">
+              <div class="wrapper">
+                <div class="status-dot">
+                  <i class="fa fa-circle"> LIVE</i>
+                  <div>
+                    <audio id="siren-audio" value="1" muted loop autoplay>
+                      <source src="data/dangerSound.mp3" type="audio/mpeg" />
+                    </audio>
+                    <a class="fa fa-volume-up" id="mute-btn"></a>
+                  </div>
+                </div>
+
+                <header>
+                  <div class="content">
+                    <!-- <img src="data/dial.png" alt="Water Level Alert System Logo" />-->
+                    <div class="details">
+                      <h1>Real-time danger water level alert</h1>
+                      <!--  <p>Real-time danger water level alert</p>-->
+                    </div>
+                  </div>
+                </header>
+                <div>
+                  <section class="wlevel nodanger">
+
+                    <div class="detail">
+                      <h4>No road in danger water level</h4>
+                      <p></p>
+                      <!-- <p>Water level is within the normal range.</p>  -->
+                    </div>
+                    <div>
+                      <a class="fa fa-check" id="nodangerCircle1"></a>
+
+                    </div>
+                  </section>
+
+                  <section class="wlevel normal">
+                    <section class="ocean-section" style="display: none" id="nsec">
+                      <div class="wave"><i class="var">NON%</i></div>
+                    </section>
+                    <div class="image" id="nimg">
+                      <!-- <img src="data/normal.png" alt="Normal Water Level" />-->
+                    </div>
+                    <div class="detail">
+                      <h5>King Abdulaziz Rd. in danger water level</h5>
+                      <p></p>
+                      <!-- <p>Water level is within the normal range.</p>  -->
+                    </div>
+                    <div>
+                      <a class="fa fa-exclamation-circle" id="dangerCircle1"></a>
+                    </div>
+                  </section>
+
+                  <section class="wlevel warning">
+                    <section class="ocean-section" style="display: none" id="wsec">
+                      <div class="wave"><i class="var">NON%</i></div>
+                    </section>
+                    <div class="image" id="wimg">
+                      <!-- <img src="data/warning.png" alt="Normal Water Level" />-->
+                    </div>
+                    <div class="detail">
+                      <h5>Prince Sultan Rd. in danger water level</h5>
+                      <p></p>
+                      <!-- <p>Water level is above the normal range.</p> -->
+                    </div>
+                    <div>
+                      <a class="fa fa-exclamation-circle" id="dangerCircle2"></a>
+                    </div>
+                  </section>
+
+                  <section class="wlevel danger">
+                    <section class="ocean-section" style="display: none" id="dsec">
+                      <div class="wave"><i class="var">NON%</i></div>
+                    </section>
+                    <div class="image" id="dimg">
+                      <!--  <img src="data/danger.png" alt="Normal Water Level" /> -->
+                    </div>
+                    <div class="detail">
+                      <h5>Al-Madinah Al-Munawara Rd. in danger water level</h5>
+                      <p></p>
+                      <!-- <p>Water level is dangerously high.</p> -->
+                    </div>
+                    <div>
+                      <a class="fa fa-exclamation-circle" id="dangerCircle3"></a>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </section>
+
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="boxcontainer">
+        <div id="sumbox">
+          <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+            src="https://thingspeak.com/channels/2097223/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=15&title=Al-Madinah+Al-Munawara+Rd.&type=line&yaxis=water+level"></iframe>
+        </div>
+
+        <div id="sumbox">
+          <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+            src="https://thingspeak.com/apps/matlab_visualizations/505563"></iframe>
+        </div>
+      </div>
+      <div class="boxcontainer">
+        <div id="sumbox">
+          <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+            src="https://thingspeak.com/channels/2097223/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=15&title=Prince+Sultan+Rd.&type=line&yaxis=Water+Level"></iframe>
+        </div>
+
+
+        <div id="sumbox">
+          
+
+          <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+            src="https://thingspeak.com/channels/2097223/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=15&title=King+Abdulaziz+Rd.&type=line&yaxis=Water+Level"></iframe>
+        </div>
+      </div>
+
+
+    </div>
+
+    <footer>
+
+      <address>
+        Contact us at <a href="mailto:CivilDefenseIT@gov.com">Civil Defense Directory IT Department E-mail</a>
+      </address>
+      <p>Civil Defense Directory&copy; IT Department is the registered trademark of
+        City Storage Systems LLC. All rights reserved.</p>.
+    </footer>
+
+
+  </div>
+  <div class="slideout-sidebar">
+    <ul>
+      <li><a href="Dashboard.html"><i class="fa fa-bar-chart	
+"></i> Dashboard</a></li>
+      <li><a href="StatsRep.html"><i class=" fa-sticky-note-o" aria-hidden="true"></i> Statistical Report</a></li>
+      <li><a href="SignIn.html"><i class="fa fa-power-off"></i> Sign Out</a></li>
+      <li><img src="whitefurat.png" alt="logo" /></li>
+    </ul>
+  </div>
+  <script src="script.js"></script>
+
+</body>
+
+</html>

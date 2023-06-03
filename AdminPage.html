@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Furat - Admin Page</title>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="slideout.CSS" rel="stylesheet" type="text/css">
+        <link href="dashboard.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" ></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body class="overflow-x-hidden">
+<input type="checkbox" id="menu-toggle"  />
+<label for="menu-toggle" class="menu-icon" ><i class="fa fa-bars"></i></label>
+<div class="content-container">
+  <div class="site-title">
+    <h1>Admin Page</h1> 
+  </div>
+
+  <div class="content">
+    <section id="menue">
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+  
+    .m-3 {
+    margin: 1rem!important;
+    margin-left: 17.5rem!important;
+}
+.col-md-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-left: 17.5rem!important;
+}
+            .btn-primary {
+    color: #fff;
+    background-color: #073763;;
+    border-color: #073763;
+}
+.text-primary {
+    color: #073763!important;
+    font-family: verdana;
+}
+.btn-info {
+    color: #fff;
+    background-color: #073763;
+    border-color: #073763;
+}
+            
+        </style>
+
+    </section>
+    <!--sj of Main Menu-->
+    <script>
+        $('.mymenubar').click(function() {
+            $(this).toggleClass("click");
+            $('.sidebar').toggleClass("show");
+        });
+        $('.feat-mymenubar').click(function() {
+            $('nav ul .feat-show').toggleClass("show");
+            $('nav ul .first').toggleClass("rotate");
+        });
+        $('.serv-mymenubar').click(function() {
+            $('nav ul .serv-show').toggleClass("show1");
+            $('nav ul .second').toggleClass("rotate");
+        });
+        $('nav ul li').click(function() {
+            $(this).addClass("active").siblings().removeClass("active");
+        });
+    </script>
+
+
+    <section id="Admin">
+        <div class="col-md-6 m-3">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group">
+                    <h1 class="text-primary">Existing Accounts</h1>
+                        <label for="exampleInputEmail1">Search Email</label>
+
+                        <div class="row">
+                            <input type="email" class="form-control col-md-8" id="txtSearch" placeholder="Enter email">
+
+                            <div class="col-md-4">
+                                <button type="submit" id="search" class="btn btn-primary ">Search</button>
+                
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                
+               
+            </div>
+            
+
+
+        </div>
+        <div class="row ml-4">
+            <button type="submit" id="getData" class="btn btn-primary m-3">All</button>
+            
+        </div>
+
+
+        <div class="col-md-6">
+            <table class="table table-striped" id='dataTbl'>
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Password</th>
+                        <th scope="col" class="text-hide">User Id</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+       
+        <div class="row">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4 mt-5">
+
+                <div id="formCreate" class="mb-3">
+                    <h1 class="text-primary">Create New Account</h1>
+                    <div class="border-2">
+
+                        <div class="form-group">
+                            <label for="email"><b>Name</b></label>
+                            <input type="text" class="form-control" placeholder="Enter Name" name="name" id="name" required>
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="email"><b>Email</b></label>
+                            <input class="form-control" type="email" placeholder="Enter Email" name="email" id="email" required>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label><b>Password</b></label>
+                            <input class="form-control" type="password" placeholder="Password" name="psw" id="psw" required>
+                        </div>
+                        <div class="form-group">
+                            <label><b>Account Type:</b></label>
+                            <select class="form-control" name="type" id="type" required>
+                <option value="Admin">Admin</option>
+                <option value="Employee">Employee</option>
+              </select>
+                        </div>
+
+                        <button type="button" id="signUp" name="submitData" class="btn btn-info">Create</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="admin.js"></script>
+    </section>
+
+
+  </div>
+
+<footer>
+
+<address>
+Contact us at <a href = "mailto:CivilDefenseIT@gov.com">Civil Defense Directory IT Department E-mail</a>
+ </address> <p>Civil Defense Directory&copy;  IT Department is the registered trademark of
+City Storage Systems LLC. All rights reserved.</p>.
+</footer>
+
+
+ </div>
+<div class="slideout-sidebar">
+  <ul>
+    
+    <li><a href="SignIn.html"><i class="fa fa-power-off"></i> Sign Out</a></li>
+          <li><img src ="whitefurat.png" alt= "logo"/></li>
+  </ul>
+</div>
+</body>
+</html>

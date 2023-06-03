@@ -1,0 +1,35 @@
+/*main.css*/
+
+
+
+body {
+background-color: #f8f6eb
+    font-family: Roboto, sans-serif;
+    min-height: 100vh;
+    color: dimgray;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+.mainsection{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    width:auto;
+    margin:auto
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+header,footer{
+    
+  font-family: "Roboto", sans-serif;}
+
+
+
+
+
+
